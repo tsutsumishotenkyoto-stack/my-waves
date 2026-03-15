@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY WAVES — Maiko Tsutsumi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f7f6f4;
+      --stone: #e8e4df;
+      --ink: #1a1a18;
+      --ink-light: #5a5a56;
+      --accent: #b8926a;
+      --accent-light: #d4b89a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 4rem 4rem;
+      gap: 4rem;
+    }
+
+    .hero-text { max-width: 560px; }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--ink-light);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--stone);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 1.2s 0.6s forwards;
+    }
+
+    .hero-card {
+      background: var(--off-white);
+      padding: 3rem;
+      max-width: 380px;
+      width: 100%;
+      border-left: 3px solid var(--accent);
+      position: relative;
+    }
+
+
+
+    .hero-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-stat {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-desc {
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .hero-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      background: var(--white);
+      color: var(--ink-light);
+      border: 1px solid var(--stone);
+    }
+
+    /* SECTION BASE */
+    section { padding: 6rem 4rem; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--off-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .pillar {
+      padding: 1.5rem;
+      background: var(--white);
+      border-top: 2px solid var(--accent);
+    }
+
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* SERVICES */
+    #services { background: var(--white); }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--stone);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.4s;
+    }
+
+    .service-card:hover { background: var(--off-white); }
+    .service-card:hover::after { width: 100%; }
+
+    .service-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .service-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.3s;
+    }
+
+    .service-link:hover { gap: 0.8rem; }
+
+    /* WHY */
+    #why {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    #why .section-title { color: var(--white); }
+    #why .section-body { color: rgba(255,255,255,0.6); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .why-item {}
+
+    .why-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--off-white);
+      text-align: center;
+    }
+
+    #contact .section-label,
+    #contact .section-title,
+    #contact .section-body {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #contact .section-body { text-align: center; }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.5rem 0;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
+      .hero-visual { justify-content: flex-start; }
+      #about { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+      section { padding: 4rem 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo"><img src="logo.png" alt="MY WAVES" style="height:40px; width:auto; display:block;"></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Me</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Japan Sourcing & Market Specialist</p>
+    <h1 class="hero-title">Your Bridge to <em>Japanese</em> Suppliers & Markets</h1>
+    <p class="hero-sub">I help international brands source lifestyle and household goods from Japan — and support overseas companies entering the Japanese market. 20+ years of industry experience, on the ground in Japan.</p>
+    <div class="hero-cta">
+      <a href="#services" class="btn btn-primary">View Services</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <p class="hero-card-label">Experience</p>
+      <p class="hero-card-stat">20+</p>
+      <p class="hero-card-desc">Years in Japan's lifestyle goods & buying industry</p>
+      <div class="hero-card-tags">
+        <span class="tag">Supplier Research</span>
+        <span class="tag">Trade Show Research</span>
+        <span class="tag">Trade Negotiation</span>
+        <span class="tag">P&L Management</span>
+        <span class="tag">Market Entry</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Bringing Japan's Craft of Living to the World</h2>
+    <div class="divider"></div>
+    <p class="section-body">For over 20 years, I've been deeply immersed in Japan's lifestyle and household goods industry — a world where everyday objects are made with extraordinary care. My mission is simple: to share Japan's culture of <em>teineina kurashi</em> — the art of living thoughtfully — with people around the world, through products that bring quiet joy to daily life.</p>
+    <br/>
+    <p class="section-body">Every product in this space carries a story. The story of how it was developed, the makers behind it, and the moments it creates in someone's home. I don't just connect you with suppliers — I help you understand the narrative behind each product, so you can build genuine connections with your customers.</p>
+    <br/>
+    <p class="section-body">In today's market, selling a product is not enough. What drives long-term, sustainable growth is <em>fandom</em> — a community of people who share your values and believe in what you offer. Together, we'll find Japanese products that resonate, and build the sourcing and import strategy that turns first-time buyers into loyal fans.</p>
+    <br/>
+    <p class="section-body" style="font-style:italic; color:var(--accent);">Let's find your story in Japan.</p>
+  </div>
+  <div class="about-pillars reveal">
+    <div class="pillar">
+      <p class="pillar-num">01</p>
+      <p class="pillar-title">Supplier Research</p>
+      <p class="pillar-desc">Identifying and vetting the right Japanese manufacturers for your product category.</p>
+    </div>
+    <div class="pillar">
+      <p class="pillar-num">02</p>
+      <p class="pillar-title">Trade Show Research</p>
+      <p class="pillar-desc">Researching Japan's trade shows and recommending the best fit for your sourcing or market entry goals.</p>
+    </div>
+    <div class="pillar">
+      <p class="pillar-num">03</p>
+      <p class="pillar-title">Trade Negotiation</p>
+      <p class="pillar-desc">Bilingual negotiation to secure fair terms and lasting partnerships.</p>
+    </div>
+    <div class="pillar">
+      <p class="pillar-num">04</p>
+      <p class="pillar-title">Market Entry</p>
+      <p class="pillar-desc">Strategic guidance for overseas brands entering the Japanese market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <p class="section-label">Services</p>
+      <h2 class="section-title">How I Can Help You</h2>
+    </div>
+    <p style="font-size:0.82rem; color:var(--ink-light); max-width:280px; text-align:right;">All services available via Fiverr and Upwork. Custom projects welcome.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <p class="service-title">Japan Supplier Research</p>
+      <p class="service-desc">Curated lists of verified Japanese manufacturers and wholesalers tailored to your product niche, with contact details and initial assessment.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🗓</span>
+      <p class="service-title">Japan Trade Show Research</p>
+      <p class="service-desc">I research Japan's trade shows and exhibitions relevant to your industry, and recommend the ones that best match your sourcing or market entry goals.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📊</span>
+      <p class="service-title">Japan Reseller Market Research</p>
+      <p class="service-desc">In-depth analysis of Japan's reseller and secondary markets — pricing trends, key platforms, and sourcing opportunities.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏭</span>
+      <p class="service-title">Trade Show Research & Proposal</p>
+      <p class="service-desc">From identifying the right exhibitions to building a visit plan — I research Japan's trade shows and propose the ones that best match your sourcing or market entry objectives.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🌏</span>
+      <p class="service-title">Japan Market Entry Support</p>
+      <p class="service-desc">Strategic consulting for overseas brands looking to enter Japan — competitor landscape, distribution channels, and partner identification.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🤝</span>
+      <p class="service-title">Trade Negotiation Support</p>
+      <p class="service-desc">Bilingual support in supplier meetings and negotiations — ensuring clear communication and mutually beneficial agreements.</p>
+      <a href="#contact" class="service-link">Enquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <p class="section-label">Why My Waves</p>
+  <h2 class="section-title">What Sets Me Apart</h2>
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <p class="why-num">20+</p>
+      <p class="why-title">Years in the Industry</p>
+      <p class="why-desc">Over 22 years as a buyer, merchandiser, and business developer at a leading Kyoto-based lifestyle goods retailer — sourcing products, negotiating with suppliers, developing OEM projects, and building lasting partnerships with domestic and international brands.</p>
+    </div>
+    <div class="why-item reveal">
+      <p class="why-num">言葉</p>
+      <p class="why-title">Truly Bilingual</p>
+      <p class="why-desc">Native Japanese fluency with professional English communication — no nuance lost in translation, on either side.</p>
+    </div>
+    <div class="why-item reveal">
+      <p class="why-num">日本</p>
+      <p class="why-title">On-the-Ground Access</p>
+      <p class="why-desc">Based in Japan, with direct access to manufacturers, trade shows, and regional suppliers that are invisible online.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title reveal">Let's Work Together</h2>
+  <div class="divider" style="margin: 1.5rem auto;"></div>
+  <p class="section-body reveal">Have a project in mind or want to explore how I can support your Japan sourcing or market entry goals? I'd love to hear from you.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:tsutsumi.shoten.kyoto@gmail.com" class="btn btn-primary">Send an Email</a>
+    <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" class="btn btn-outline">View on Fiverr</a>
+    <a href="https://www.upwork.com/freelancers/~01ff397533329f3c41" target="_blank" class="btn btn-outline">View on Upwork</a>
+    <a href="https://www.linkedin.com/in/maiko-tsutsumi-3472733aa" target="_blank" class="btn btn-outline">LinkedIn</a>
+  </div>
+  <p class="reveal" style="margin-top:1.5rem; font-size:0.85rem; color:var(--ink-light);">tsutsumi.shoten.kyoto@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">My Waves</span>
+  <span>© 2026 Maiko Tsutsumi. All rights reserved.</span>
+  <span>Japan Sourcing & Market Specialist</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80
