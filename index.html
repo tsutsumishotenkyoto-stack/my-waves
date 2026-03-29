@@ -78,9 +78,31 @@
       align-items: center;
       padding: 8rem 4rem 4rem;
       gap: 4rem;
+      position: relative;
+      background-image: url('hero.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .hero-text { max-width: 560px; }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 18, 16, 0.62);
+      z-index: 0;
+    }
+
+    #hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text { max-width: 560px; color: var(--white); }
+
+    #hero .hero-title { color: var(--white); }
+
+    #hero .hero-sub { color: rgba(255,255,255,0.75); }
 
     .hero-eyebrow {
       font-size: 0.72rem;
@@ -191,10 +213,14 @@
     }
 
     .hero-card {
-      background: var(--off-white);
+      background: rgba(247, 246, 244, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 3rem;
       max-width: 380px;
       width: 100%;
+      border-left: 3px solid var(--accent);
+      border: 1px solid rgba(255,255,255,0.18);
       border-left: 3px solid var(--accent);
       position: relative;
     }
@@ -214,16 +240,16 @@
       font-size: 3.5rem;
       font-weight: 300;
       line-height: 1;
-      color: var(--ink);
+      color: var(--white);
       margin-bottom: 0.25rem;
     }
 
     .hero-card-desc {
       font-size: 0.85rem;
-      color: var(--ink-light);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid var(--stone);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
     .hero-card-tags {
@@ -237,9 +263,9 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 0.35rem 0.85rem;
-      background: var(--white);
-      color: var(--ink-light);
-      border: 1px solid var(--stone);
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.22);
     }
 
     /* SECTION BASE */
