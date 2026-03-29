@@ -289,14 +289,35 @@
       background: var(--off-white);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      gap: 0;
+      align-items: stretch;
+      padding: 0;
+    }
+
+    .about-image {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text {
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .about-pillars {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      margin-top: 2.5rem;
     }
 
     .pillar {
@@ -517,13 +538,17 @@
     @media (max-width: 768px) {
       nav { position: fixed; top: 0; }
       .hero-image-area { margin-top: 70px; }
+      #about { grid-template-columns: 1fr; }
+      .about-image { max-height: 360px; }
+      .about-img { height: 360px; }
+      .about-text { padding: 3rem 2rem; }
     }
 
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links { gap: 1.5rem; }
       .hero-content { padding: 40px 2rem; }
-      #about { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+      #about { grid-template-columns: 1fr; }
       section { padding: 4rem 2rem; }
       .services-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -567,7 +592,12 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="reveal">
+  <!-- 左：画像 -->
+  <div class="about-image reveal">
+    <img src="about.png" alt="Maiko Tsutsumi — Japan Sourcing Specialist" class="about-img">
+  </div>
+  <!-- 右：テキスト -->
+  <div class="about-text reveal">
     <p class="section-label">About</p>
     <h2 class="section-title">Bringing Japan's Craft of Living to the World</h2>
     <div class="divider"></div>
@@ -578,27 +608,27 @@
     <p class="section-body">In today's market, selling a product is not enough. What drives long-term, sustainable growth is <em>fandom</em> — a community of people who share your values and believe in what you offer. Together, we'll find Japanese products that resonate, and build the sourcing and import strategy that turns first-time buyers into loyal fans.</p>
     <br/>
     <p class="section-body" style="font-style:italic; color:var(--accent);">Let's find your story in Japan.</p>
-  </div>
-  <div class="about-pillars reveal">
-    <div class="pillar">
-      <p class="pillar-num">01</p>
-      <p class="pillar-title">Supplier Research</p>
-      <p class="pillar-desc">Identifying and vetting the right Japanese manufacturers for your product category.</p>
-    </div>
-    <div class="pillar">
-      <p class="pillar-num">02</p>
-      <p class="pillar-title">Trade Show Research</p>
-      <p class="pillar-desc">Researching Japan's trade shows and recommending the best fit for your sourcing or market entry goals.</p>
-    </div>
-    <div class="pillar">
-      <p class="pillar-num">03</p>
-      <p class="pillar-title">Trade Negotiation</p>
-      <p class="pillar-desc">Bilingual negotiation to secure fair terms and lasting partnerships.</p>
-    </div>
-    <div class="pillar">
-      <p class="pillar-num">04</p>
-      <p class="pillar-title">Market Entry</p>
-      <p class="pillar-desc">Strategic guidance for overseas brands entering the Japanese market.</p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <p class="pillar-num">01</p>
+        <p class="pillar-title">Supplier Research</p>
+        <p class="pillar-desc">Identifying and vetting the right Japanese manufacturers for your product category.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">02</p>
+        <p class="pillar-title">Trade Show Research</p>
+        <p class="pillar-desc">Researching Japan's trade shows and recommending the best fit for your sourcing or market entry goals.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">03</p>
+        <p class="pillar-title">Trade Negotiation</p>
+        <p class="pillar-desc">Bilingual negotiation to secure fair terms and lasting partnerships.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">04</p>
+        <p class="pillar-title">Market Entry</p>
+        <p class="pillar-desc">Strategic guidance for overseas brands entering the Japanese market.</p>
+      </div>
     </div>
   </div>
 </section>
