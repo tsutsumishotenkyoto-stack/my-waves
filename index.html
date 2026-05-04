@@ -763,6 +763,69 @@
       .why-card { width: 100%; }
       .services-hero-img { border-radius: 8px; }
     }
+
+    /* Client Work Section */
+    #client-work {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #client-work h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cw-intro {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .cw-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      text-align: left;
+    }
+    .cw-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .cw-img {
+      width: 100%;
+      display: block;
+    }
+    .cw-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cw-meta {
+      font-size: 0.8rem;
+      color: #c9a84c;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cw-delivered, .cw-result {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cw-result {
+      color: #1a2e4a;
+    }
+    @media (max-width: 700px) {
+      .cw-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -775,6 +838,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Me</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#client-work">Client Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -904,6 +968,46 @@
     <div class="why-card">
       <img src="note.png" alt="note — MY WAVES" class="why-card-img">
       <a href="https://note.com/ideal_moraea1477" class="why-card-btn" target="_blank" rel="noopener">Read on note →</a>
+    </div>
+  </div>
+</section>
+
+<section id="client-work">
+  <div class="section-label">Client Work</div>
+  <h2>Past Projects</h2>
+  <p class="cw-intro">A selection of completed client projects. More case studies coming soon.</p>
+  <div class="cw-grid">
+    <div class="cw-card">
+      <img src="case-01.png" alt="AI Tool Market Outreach" class="cw-img">
+      <div class="cw-body">
+        <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
+        <p class="cw-delivered"><strong>Delivered:</strong> Cold email campaign to 4,500+ Japanese IT/DX agencies + X influencer research report (10 accounts)</p>
+        <p class="cw-result"><strong>Result:</strong> 11,251 companies researched, 4,517 emails successfully delivered</p>
+      </div>
+    </div>
+    <div class="cw-card">
+      <img src="case-02.png" alt="Bridal Fabric Supplier Research" class="cw-img">
+      <div class="cw-body">
+        <div class="cw-meta">Kosovo × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
+        <p class="cw-delivered"><strong>Delivered:</strong> Market structure report + 5 supplier recommendations + Excel scorecard</p>
+        <p class="cw-result"><strong>Result:</strong> Export-ready suppliers identified across Kyoto, Fukui &amp; Gunma regions</p>
+      </div>
+    </div>
+    <div class="cw-card">
+      <img src="case-03.png" alt="Trading Card Game Procurement Research" class="cw-img">
+      <div class="cw-body">
+        <div class="cw-meta">USA × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
+        <p class="cw-delivered"><strong>Delivered:</strong> Large-scale procurement feasibility report</p>
+        <p class="cw-result"><strong>Result:</strong> 4 major TCG titles analyzed for 10,000–15,000+ boxes/month import strategy</p>
+      </div>
+    </div>
+    <div class="cw-card">
+      <img src="case-04.png" alt="Used Game Console Supplier Research" class="cw-img">
+      <div class="cw-body">
+        <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
+        <p class="cw-delivered"><strong>Delivered:</strong> Supplier list with inquiry responses from vetted Japanese companies</p>
+        <p class="cw-result"><strong>Result:</strong> 4 export-ready suppliers identified with international shipping confirmation</p>
+      </div>
     </div>
   </div>
 </section>
