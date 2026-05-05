@@ -16,6 +16,8 @@
       --ink-light: #5a5a56;
       --accent: #b8926a;
       --accent-light: #d4b89a;
+      --navy: #1a2e4a;
+      --gold: #c9a84c;
     }
 
     html { scroll-behavior: smooth; }
@@ -93,7 +95,7 @@
     }
 
     .hero-text {
-      max-width: 560px;
+      max-width: 640px;
       margin: 0 auto;
     }
 
@@ -109,9 +111,9 @@
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
       font-weight: 300;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.01em;
       margin-bottom: 1.5rem;
       opacity: 0;
@@ -126,7 +128,7 @@
     .hero-sub {
       font-size: 1rem;
       color: var(--ink-light);
-      max-width: 420px;
+      max-width: 540px;
       margin: 0 auto 2.5rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.6s forwards;
@@ -176,87 +178,12 @@
     }
 
     .btn-fiverr {
-      background: var(--ink);
-      color: var(--white);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      padding: 0.6rem 1.4rem;
-      margin-top: 0.75rem;
-      display: inline-block;
-    }
-
-    .btn-fiverr:hover { background: var(--accent); }
-
-    .btn-linkedin {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .btn-linkedin:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      opacity: 0;
-      animation: fadeIn 1.2s 0.6s forwards;
-    }
-
-    .hero-card {
-      background: var(--off-white);
-      padding: 3rem;
-      max-width: 380px;
-      width: 100%;
-      border-left: 3px solid var(--accent);
-      position: relative;
-    }
-
-
-
-    .hero-card-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .hero-card-stat {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      line-height: 1;
+      background: var(--accent);
       color: var(--ink);
-      margin-bottom: 0.25rem;
+      font-weight: 500;
     }
 
-    .hero-card-desc {
-      font-size: 0.85rem;
-      color: var(--ink-light);
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--stone);
-    }
-
-    .hero-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.85rem;
-      background: var(--white);
-      color: var(--ink-light);
-      border: 1px solid var(--stone);
-    }
+    .btn-fiverr:hover { background: var(--accent-light); color: var(--ink); }
 
     /* SECTION BASE */
     section { padding: 6rem 4rem; }
@@ -284,6 +211,441 @@
       line-height: 1.8;
     }
 
+    /* PAIN SECTION */
+    #pain {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+    }
+    #pain .pain-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    #pain .section-label {
+      color: var(--accent);
+    }
+    #pain h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+    .pain-list {
+      list-style: none;
+      padding: 0;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .pain-list li {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+      padding: 16px 0 16px 36px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      line-height: 1.6;
+    }
+    .pain-list li:last-child { border-bottom: none; }
+    .pain-list li::before {
+      content: "✗";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    /* LOGO SEPARATOR */
+    .logo-separator {
+      text-align: center;
+      padding: 56px 0;
+      background: var(--white);
+    }
+    .logo-separator img {
+      width: 80px;
+      height: auto;
+      opacity: 0.6;
+    }
+
+    /* WORK SECTION (旧 client-work をリネーム) */
+    #work {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #work h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cw-intro {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .cw-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      text-align: left;
+    }
+    .cw-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cw-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+    }
+    .cw-img {
+      width: 100%;
+      display: block;
+    }
+    .cw-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cw-meta {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cw-delivered, .cw-result {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cw-result {
+      color: var(--navy);
+    }
+    @media (max-width: 700px) {
+      .cw-grid { grid-template-columns: 1fr; }
+    }
+
+    /* PRICING SECTION */
+    #pricing {
+      background: var(--off-white);
+      text-align: center;
+    }
+    #pricing .pricing-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    #pricing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .pricing-intro {
+      color: var(--ink-light);
+      margin-bottom: 56px;
+      line-height: 1.7;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 36px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .pricing-card:hover {
+      box-shadow: 0 0 0 2px var(--accent), 0 14px 36px rgba(184,146,106,0.28);
+      transform: translateY(-4px);
+    }
+    .pricing-card.featured {
+      background: var(--navy);
+      transform: scale(1.04);
+      border: 2px solid var(--accent);
+      box-shadow: 0 12px 32px rgba(26,46,74,0.25);
+    }
+    .pricing-card.featured:hover {
+      transform: scale(1.04) translateY(-4px);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pricing-tier {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .pricing-icon {
+      font-size: 1.9rem;
+      margin: 4px 0;
+    }
+    .pricing-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .pricing-desc {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .pricing-delivery {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.05em;
+    }
+    .pricing-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--white);
+      margin: 4px 0 8px;
+    }
+    .pricing-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: var(--ink);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .pricing-btn:hover {
+      background: var(--accent-light);
+    }
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; gap: 32px; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+    }
+
+    /* SERVICES (簡略化) */
+    #services {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--white);
+    }
+    #services h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .services-intro {
+      color: var(--ink-light);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .services-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .services-hero-img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .services-fiverr-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease;
+    }
+    .services-fiverr-btn:hover {
+      background: var(--gold);
+    }
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+      border-top: 1px solid #e8e8e8;
+    }
+    .service-item {
+      padding: 24px 0;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .service-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+    .service-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .service-cta {
+      align-self: flex-start;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 4px;
+      transition: color 0.2s ease;
+    }
+    .service-cta:hover { color: var(--gold); }
+    .services-custom {
+      margin-top: 56px;
+      padding: 36px 28px;
+      background: var(--off-white);
+      border-radius: 10px;
+      text-align: center;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .services-custom-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .services-custom-text {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .services-custom-btn {
+      display: inline-block;
+      padding: 11px 26px;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+    }
+    .services-custom-btn:hover { background: var(--accent); }
+
+    /* WHY ME */
+    #why {
+      background: var(--ink);
+      color: var(--white);
+    }
+    #why .section-title { color: var(--white); }
+    #why .section-body { color: rgba(255,255,255,0.6); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .why-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .why-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .why-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+    .why-cards {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .why-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 340px;
+    }
+    .why-card-img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.30);
+    }
+    .why-card-btn {
+      display: inline-block;
+      padding: 10px 28px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease;
+    }
+    .why-card-btn:hover {
+      background: var(--gold);
+    }
+
     /* ABOUT */
     #about {
       background: var(--off-white);
@@ -298,8 +660,17 @@
       width: 100%;
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .about-logo-illustration {
+      width: 160px;
+      height: auto;
+      margin-bottom: 24px;
+      display: block;
     }
 
     .about-img {
@@ -353,119 +724,6 @@
       line-height: 1.6;
     }
 
-    /* SERVICES */
-    #services { background: var(--white); }
-
-    .services-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--stone);
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      transition: background 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--accent);
-      transition: width 0.4s;
-    }
-
-    .service-card:hover { background: var(--off-white); }
-    .service-card:hover::after { width: 100%; }
-
-    .service-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-
-    .service-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-      color: var(--ink);
-    }
-
-    .service-desc {
-      font-size: 0.82rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-link {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.3s;
-    }
-
-    .service-link:hover { gap: 0.8rem; }
-
-    /* WHY */
-    #why {
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    #why .section-title { color: var(--white); }
-    #why .section-body { color: rgba(255,255,255,0.6); }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-
-    .why-item {}
-
-    .why-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-
-    .why-title {
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .why-desc {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-    }
-
     /* CONTACT */
     #contact {
       background: var(--off-white);
@@ -494,11 +752,28 @@
       background: var(--ink);
       color: rgba(255,255,255,0.4);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 2rem 4rem;
+      gap: 18px;
+      padding: 3rem 4rem 2rem;
       font-size: 0.75rem;
       letter-spacing: 0.08em;
+    }
+
+    .footer-illustration {
+      width: 120px;
+      height: auto;
+      margin-bottom: 4px;
+      opacity: 0.85;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     footer .footer-logo {
@@ -528,6 +803,19 @@
       to   { opacity: 1; }
     }
 
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(184,146,106,0.55);
+      }
+      50% {
+        box-shadow: 0 0 0 14px rgba(184,146,106,0);
+      }
+    }
+
+    .btn-pulse {
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -544,8 +832,7 @@
       nav { position: fixed; top: 0; }
       .hero-image-area { margin-top: 70px; }
       #about { grid-template-columns: 1fr; }
-      .about-image { max-height: 360px; }
-      .about-img { height: 360px; }
+      .about-image { max-height: none; padding: 2.5rem 1rem; }
       .about-text { padding: 3rem 2rem; }
     }
 
@@ -555,39 +842,43 @@
       .hero-content { padding: 40px 2rem; }
       #about { grid-template-columns: 1fr; }
       section { padding: 4rem 2rem; }
-      .services-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+      footer { padding: 2.5rem 2rem 2rem; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Portfolio Section */
+    @media (max-width: 600px) {
+      .why-card { width: 100%; }
+      .services-hero-img { border-radius: 8px; }
+    }
+
+    /* ===========================================================
+       LEGACY: Portfolio Gallery + Lightbox (currently disabled)
+       HTML はコメントアウトされていますが、復活させる場合は
+       下の <!-- LEGACY PORTFOLIO ... --> ブロックを解除してください。
+       =========================================================== */
     #portfolio {
       padding: 80px 40px;
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
     }
-
     #portfolio h2 {
       font-size: 2rem;
       margin-bottom: 12px;
     }
-
     .portfolio-intro {
       color: #666;
       max-width: 600px;
       margin: 0 auto 48px;
       line-height: 1.7;
     }
-
     .portfolio-gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
       justify-content: center;
     }
-
     .portfolio-item {
       width: 180px;
       display: flex;
@@ -595,7 +886,6 @@
       align-items: center;
       gap: 10px;
     }
-
     .portfolio-item img {
       width: 100%;
       border-radius: 8px;
@@ -603,19 +893,15 @@
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
     .portfolio-item img:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     }
-
     .portfolio-caption {
       font-size: 0.8rem;
       color: #888;
       margin: 0;
     }
-
-    /* Lightbox */
     .lightbox-overlay {
       display: none;
       position: fixed;
@@ -625,18 +911,15 @@
       justify-content: center;
       align-items: center;
     }
-
     .lightbox-overlay.active {
       display: flex;
     }
-
     .lightbox-overlay img {
       max-height: 90vh;
       max-width: 90vw;
       border-radius: 4px;
       box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     }
-
     .lightbox-close {
       position: fixed;
       top: 20px;
@@ -648,183 +931,9 @@
       border: none;
       line-height: 1;
     }
-
     @media (max-width: 600px) {
-      .portfolio-gallery {
-        gap: 16px;
-      }
-      .portfolio-item {
-        width: calc(50% - 8px);
-      }
-    }
-
-    /* Services Redesign */
-    #services {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .services-intro {
-      color: #666;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .services-hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 56px;
-    }
-    .services-hero-img {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-    }
-    .services-fiverr-btn {
-      display: inline-block;
-      padding: 12px 32px;
-      background: #1a2e4a;
-      color: #fff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      transition: background 0.2s ease;
-    }
-    .services-fiverr-btn:hover {
-      background: #c9a84c;
-    }
-    .services-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: left;
-      border-top: 1px solid #e8e8e8;
-    }
-    .service-item {
-      padding: 20px 0;
-      border-bottom: 1px solid #e8e8e8;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .service-name {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #1a2e4a;
-    }
-    .service-desc {
-      font-size: 0.9rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* Why Me Cards */
-    .why-cards {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-    .why-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      width: 340px;
-    }
-    .why-card-img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    }
-    .why-card-btn {
-      display: inline-block;
-      padding: 10px 28px;
-      background: #1a2e4a;
-      color: #fff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      transition: background 0.2s ease;
-    }
-    .why-card-btn:hover {
-      background: #c9a84c;
-    }
-
-    @media (max-width: 600px) {
-      .why-card { width: 100%; }
-      .services-hero-img { border-radius: 8px; }
-    }
-
-    /* Client Work Section */
-    #client-work {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    #client-work h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-    .cw-intro {
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto 48px;
-      line-height: 1.7;
-    }
-    .cw-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      text-align: left;
-    }
-    .cw-card {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-    .cw-img {
-      width: 100%;
-      display: block;
-    }
-    .cw-body {
-      padding: 20px 24px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .cw-meta {
-      font-size: 0.8rem;
-      color: #c9a84c;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .cw-delivered, .cw-result {
-      font-size: 0.9rem;
-      color: #444;
-      line-height: 1.6;
-      margin: 0;
-    }
-    .cw-result {
-      color: #1a2e4a;
-    }
-    @media (max-width: 700px) {
-      .cw-grid {
-        grid-template-columns: 1fr;
-      }
+      .portfolio-gallery { gap: 16px; }
+      .portfolio-item { width: calc(50% - 8px); }
     }
   </style>
 </head>
@@ -835,149 +944,57 @@
   <a href="#hero" class="nav-logo"><img src="logo.png" alt="MY WAVES" style="height:40px; width:auto; display:block;"></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Me</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#client-work">Client Work</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <!-- 1段目: 画像エリア -->
   <div class="hero-image-area">
-    <img src="hero.png" alt="MY WAVES — Japan Sourcing & Market Specialist" class="hero-img">
+    <img src="hero2.png" alt="MY WAVES — Japan Supplier Research & First Contact" class="hero-img">
   </div>
-  <!-- 2段目: テキストエリア -->
   <div class="hero-content">
     <div class="hero-text">
-      <p class="hero-eyebrow">Japan Sourcing & Market Specialist</p>
-      <h1 class="hero-title">Your Bridge to <em>Japanese</em> Suppliers & Markets</h1>
-      <p class="hero-sub">I help international brands source lifestyle and household goods from Japan — and support overseas companies entering the Japanese market. 20+ years of industry experience, on the ground in Japan.</p>
+      <p class="hero-eyebrow">Japan Supplier Research &amp; First Contact</p>
+      <h1 class="hero-title">You know what you want from Japan.<br>Finding the <em>right supplier</em> is the hard part.</h1>
+      <p class="hero-sub">I research, vet, and contact Japanese suppliers on your behalf — so you don't have to start from zero.<br>20+ years as a buyer in Japan. Based in Kyoto. Fully bilingual.</p>
       <div class="hero-cta">
-        <a href="#services" class="btn btn-primary">View Services</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="#work" class="btn btn-primary">View Past Projects</a>
+        <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" rel="noopener" class="btn btn-fiverr btn-pulse">Order on Fiverr</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <!-- 左：画像 -->
-  <div class="about-image reveal">
-    <img src="about.png" alt="Maiko Tsutsumi — Japan Sourcing Specialist" class="about-img">
-  </div>
-  <!-- 右：テキスト -->
-  <div class="about-text reveal">
-    <p class="section-label">About</p>
-    <h2 class="section-title">Bringing Japan's Craft of Living to the World</h2>
-    <div class="divider"></div>
-    <p class="section-body">For over 20 years, I've been deeply immersed in Japan's lifestyle and household goods industry — a world where everyday objects are made with extraordinary care. My mission is simple: to share Japan's culture of <em>teineina kurashi</em> — the art of living thoughtfully — with people around the world, through products that bring quiet joy to daily life.</p>
-    <br/>
-    <p class="section-body">Every product in this space carries a story. The story of how it was developed, the makers behind it, and the moments it creates in someone's home. I don't just connect you with suppliers — I help you understand the narrative behind each product, so you can build genuine connections with your customers.</p>
-    <br/>
-    <p class="section-body">In today's market, selling a product is not enough. What drives long-term, sustainable growth is <em>fandom</em> — a community of people who share your values and believe in what you offer. Together, we'll find Japanese products that resonate, and build the sourcing and import strategy that turns first-time buyers into loyal fans.</p>
-    <br/>
-    <p class="section-body" style="font-style:italic; color:var(--accent);">Let's find your story in Japan.</p>
-    <div class="about-pillars">
-      <div class="pillar">
-        <p class="pillar-num">01</p>
-        <p class="pillar-title">Supplier Research</p>
-        <p class="pillar-desc">Identifying and vetting the right Japanese manufacturers for your product category.</p>
-      </div>
-      <div class="pillar">
-        <p class="pillar-num">02</p>
-        <p class="pillar-title">Trade Show Research</p>
-        <p class="pillar-desc">Researching Japan's trade shows and recommending the best fit for your sourcing or market entry goals.</p>
-      </div>
-      <div class="pillar">
-        <p class="pillar-num">03</p>
-        <p class="pillar-title">Trade Negotiation</p>
-        <p class="pillar-desc">Bilingual negotiation to secure fair terms and lasting partnerships.</p>
-      </div>
-      <div class="pillar">
-        <p class="pillar-num">04</p>
-        <p class="pillar-title">Market Entry</p>
-        <p class="pillar-desc">Strategic guidance for overseas brands entering the Japanese market.</p>
-      </div>
-    </div>
+<!-- PAIN -->
+<section id="pain">
+  <div class="pain-inner reveal">
+    <p class="section-label">Common Challenges</p>
+    <h2>Does this sound familiar?</h2>
+    <ul class="pain-list">
+      <li>You want to source from Japan, but don't know where to start</li>
+      <li>You're not sure which suppliers are actually export-ready</li>
+      <li>Language and cultural barriers make the first contact feel risky</li>
+      <li>You've tried searching online, but only find B2C retail sites</li>
+      <li>A past agent gave you a list — and nothing happened after that</li>
+    </ul>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-label">Services</div>
-  <h2>How I Can Help You</h2>
-  <p class="services-intro">All services available via Fiverr and Upwork. Custom projects welcome.</p>
-  <div class="services-hero">
-    <img src="fiverr-01.png" alt="MY WAVES — Japan Sourcing & Market Specialist" class="services-hero-img">
-    <a href="https://www.fiverr.com/s/DBvQNgA" class="services-fiverr-btn" target="_blank" rel="noopener">View My Fiverr Gigs →</a>
-  </div>
-  <div class="services-list">
-    <div class="service-item">
-      <span class="service-name">Japan Supplier Research</span>
-      <span class="service-desc">Curated lists of verified Japanese manufacturers and wholesalers tailored to your product niche, with contact details and initial assessment.</span>
-    </div>
-    <div class="service-item">
-      <span class="service-name">Japan Trade Show Research</span>
-      <span class="service-desc">I research Japan's trade shows and exhibitions relevant to your industry, and recommend the ones that best match your sourcing or market entry goals.</span>
-    </div>
-    <div class="service-item">
-      <span class="service-name">Japan Reseller Market Research</span>
-      <span class="service-desc">In-depth analysis of Japan's reseller and secondary markets — pricing trends, key platforms, and sourcing opportunities.</span>
-    </div>
-    <div class="service-item">
-      <span class="service-name">Japan Market Entry Support</span>
-      <span class="service-desc">Strategic consulting for overseas brands looking to enter Japan — competitor landscape, distribution channels, and partner identification.</span>
-    </div>
-    <div class="service-item">
-      <span class="service-name">Trade Negotiation Support</span>
-      <span class="service-desc">Bilingual support in supplier meetings and negotiations — ensuring clear communication and mutually beneficial agreements.</span>
-    </div>
-  </div>
-</section>
+<!-- LOGO SEPARATOR (Pain → Work) -->
+<div class="logo-separator">
+  <img src="logo_illustration.png" alt="">
+</div>
 
-<!-- WHY -->
-<section id="why">
-  <p class="section-label">Why My Waves</p>
-  <h2 class="section-title">What Sets Me Apart</h2>
-  <div class="why-grid">
-    <div class="why-item reveal">
-      <p class="why-num">20+</p>
-      <p class="why-title">Years in the Industry</p>
-      <p class="why-desc">Over 22 years as a buyer, merchandiser, and business developer at a leading Kyoto-based lifestyle goods retailer — sourcing products, negotiating with suppliers, developing OEM projects, and building lasting partnerships with domestic and international brands.</p>
-    </div>
-    <div class="why-item reveal">
-      <p class="why-num">言葉</p>
-      <p class="why-title">Truly Bilingual</p>
-      <p class="why-desc">Native Japanese fluency with professional English communication — no nuance lost in translation, on either side.</p>
-    </div>
-    <div class="why-item reveal">
-      <p class="why-num">日本</p>
-      <p class="why-title">On-the-Ground Access</p>
-      <p class="why-desc">Based in Japan, with direct access to manufacturers, trade shows, and regional suppliers that are invisible online.</p>
-    </div>
-  </div>
-  <div class="why-cards">
-    <div class="why-card">
-      <img src="linkedin.png" alt="LinkedIn — Maiko Tsutsumi" class="why-card-img">
-      <a href="https://www.linkedin.com/in/maiko-tsutsumi-3472733aa" class="why-card-btn" target="_blank" rel="noopener">View My LinkedIn Profile →</a>
-    </div>
-    <div class="why-card">
-      <img src="note.png" alt="note — MY WAVES" class="why-card-img">
-      <a href="https://note.com/ideal_moraea1477" class="why-card-btn" target="_blank" rel="noopener">Read on note →</a>
-    </div>
-  </div>
-</section>
-
-<section id="client-work">
-  <div class="section-label">Client Work</div>
-  <h2>Past Projects</h2>
-  <p class="cw-intro">A selection of completed client projects. More case studies coming soon.</p>
+<!-- WORK (旧 Client Work) -->
+<section id="work">
+  <div class="section-label">Work</div>
+  <h2>What I've Delivered</h2>
+  <p class="cw-intro">Real projects. Real results. All delivered via Fiverr.</p>
   <div class="cw-grid">
-    <div class="cw-card">
+    <div class="cw-card reveal">
       <img src="case-01.png" alt="AI Tool Market Outreach" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -985,7 +1002,7 @@
         <p class="cw-result"><strong>Result:</strong> 11,251 companies researched, 4,517 emails successfully delivered</p>
       </div>
     </div>
-    <div class="cw-card">
+    <div class="cw-card reveal">
       <img src="case-02.png" alt="Bridal Fabric Supplier Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Kosovo × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -993,7 +1010,7 @@
         <p class="cw-result"><strong>Result:</strong> Export-ready suppliers identified across Kyoto, Fukui &amp; Gunma regions</p>
       </div>
     </div>
-    <div class="cw-card">
+    <div class="cw-card reveal">
       <img src="case-03.png" alt="Trading Card Game Procurement Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">USA × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -1001,7 +1018,7 @@
         <p class="cw-result"><strong>Result:</strong> 4 major TCG titles analyzed for 10,000–15,000+ boxes/month import strategy</p>
       </div>
     </div>
-    <div class="cw-card">
+    <div class="cw-card reveal">
       <img src="case-04.png" alt="Used Game Console Supplier Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -1012,6 +1029,12 @@
   </div>
 </section>
 
+<!-- ===================================================================
+     LEGACY PORTFOLIO (currently hidden — kept for future restoration)
+     復活させる場合は、下の <section id="portfolio">…</section> を囲っている
+     コメントを外してください。CSSは <style> 内に残してあります。
+     =================================================================== -->
+<!--
 <section id="portfolio">
   <div class="section-label">Portfolio</div>
   <h2>Work Samples</h2>
@@ -1039,6 +1062,149 @@
     </div>
   </div>
 </section>
+-->
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="pricing-inner">
+    <p class="section-label">Pricing</p>
+    <h2>Simple, Transparent Pricing</h2>
+    <p class="pricing-intro">All services available on Fiverr. No hidden fees.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <span class="pricing-tier">Basic</span>
+        <div class="pricing-icon">🔍</div>
+        <h3 class="pricing-name">Supplier Research</h3>
+        <p class="pricing-desc">Japan market summary (Word) + curated supplier list of 3–5 companies with profiles and URLs (Excel).</p>
+        <p class="pricing-delivery">Delivery: 5 days</p>
+        <div class="pricing-price">$50</div>
+        <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" rel="noopener" class="pricing-btn">Order on Fiverr →</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <span class="pricing-badge">Recommended</span>
+        <span class="pricing-tier">Standard</span>
+        <div class="pricing-icon">📩</div>
+        <h3 class="pricing-name">First Contact Support</h3>
+        <p class="pricing-desc">I reach out to your selected Japanese suppliers on your behalf via official inquiry forms.</p>
+        <p class="pricing-delivery">Delivery: 7 days</p>
+        <div class="pricing-price">$100</div>
+        <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" rel="noopener" class="pricing-btn">Order on Fiverr →</a>
+      </div>
+      <div class="pricing-card reveal">
+        <span class="pricing-tier">Premium</span>
+        <div class="pricing-icon">💼</div>
+        <h3 class="pricing-name">Custom Support</h3>
+        <p class="pricing-desc">Full sourcing support tailored to your business. Let's discuss your needs and build a custom plan.</p>
+        <p class="pricing-delivery">Delivery: 21 days</p>
+        <div class="pricing-price">$500~</div>
+        <a href="mailto:tsutsumi.shoten.kyoto@gmail.com" class="pricing-btn">Contact Me →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (簡略化) -->
+<section id="services">
+  <div class="section-label">Services</div>
+  <h2>How I Can Help You</h2>
+  <p class="services-intro">All services available via Fiverr and Upwork. Custom projects welcome.</p>
+  <div class="services-hero">
+    <img src="fiverr-01.png" alt="MY WAVES — Japan Sourcing & Market Specialist" class="services-hero-img">
+    <a href="https://www.fiverr.com/s/DBvQNgA" class="services-fiverr-btn" target="_blank" rel="noopener">View My Fiverr Gigs →</a>
+  </div>
+  <div class="services-list">
+    <div class="service-item reveal">
+      <span class="service-name">🔍 Japan Supplier Research</span>
+      <span class="service-desc">Curated lists of verified Japanese manufacturers and wholesalers tailored to your product niche — with company profiles, contact details, and export-readiness assessment.</span>
+      <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" rel="noopener" class="service-cta">Order on Fiverr →</a>
+    </div>
+    <div class="service-item reveal">
+      <span class="service-name">📩 First Contact Support</span>
+      <span class="service-desc">I reach out to Japanese suppliers on your behalf via official inquiry forms — in natural, relationship-first Japanese. No cold emails. No awkward machine translation.</span>
+      <a href="https://www.fiverr.com/s/DBvQNgA" target="_blank" rel="noopener" class="service-cta">Order on Fiverr →</a>
+    </div>
+  </div>
+  <div class="services-custom reveal">
+    <p class="services-custom-title">Need something else?</p>
+    <p class="services-custom-text">Trade show research, market entry consulting, and negotiation support are available as custom projects.</p>
+    <a href="mailto:tsutsumi.shoten.kyoto@gmail.com" class="services-custom-btn">Get in Touch →</a>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why">
+  <p class="section-label">Why My Waves</p>
+  <h2 class="section-title">What Sets Me Apart</h2>
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <p class="why-num">20+</p>
+      <p class="why-title">Years in the Industry</p>
+      <p class="why-desc">Over 22 years as a buyer, merchandiser, and business developer at a leading Kyoto-based lifestyle goods retailer — sourcing products, negotiating with suppliers, developing OEM projects, and building lasting partnerships with domestic and international brands.</p>
+    </div>
+    <div class="why-item reveal">
+      <p class="why-num">言葉</p>
+      <p class="why-title">Truly Bilingual</p>
+      <p class="why-desc">Native Japanese fluency with professional English communication — no nuance lost in translation, on either side.</p>
+    </div>
+    <div class="why-item reveal">
+      <p class="why-num">日本</p>
+      <p class="why-title">On-the-Ground Access</p>
+      <p class="why-desc">Based in Japan, with direct access to manufacturers, trade shows, and regional suppliers that are invisible online.</p>
+    </div>
+  </div>
+  <div class="why-cards">
+    <div class="why-card reveal">
+      <img src="linkedin.png" alt="LinkedIn — Maiko Tsutsumi" class="why-card-img">
+      <a href="https://www.linkedin.com/in/maiko-tsutsumi-3472733aa" class="why-card-btn" target="_blank" rel="noopener">View My LinkedIn Profile →</a>
+    </div>
+    <div class="why-card reveal">
+      <img src="note.png" alt="note — MY WAVES" class="why-card-img">
+      <a href="https://note.com/ideal_moraea1477" class="why-card-btn" target="_blank" rel="noopener">Read on note →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-image reveal">
+    <img src="logo_illustration.png" alt="" class="about-logo-illustration">
+    <img src="about.png" alt="Maiko Tsutsumi — Japan Sourcing Specialist" class="about-img">
+  </div>
+  <div class="about-text reveal">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Bringing Japan's Craft of Living to the World</h2>
+    <div class="divider"></div>
+    <p class="section-body">For over 20 years, I've been deeply immersed in Japan's lifestyle and household goods industry — a world where everyday objects are made with extraordinary care. My mission is simple: to share Japan's culture of <em>teineina kurashi</em> — the art of living thoughtfully — with people around the world, through products that bring quiet joy to daily life.</p>
+    <br/>
+    <p class="section-body">Every product in this space carries a story. The story of how it was developed, the makers behind it, and the moments it creates in someone's home. I don't just connect you with suppliers — I help you understand the narrative behind each product, so you can build genuine connections with your customers.</p>
+    <br/>
+    <p class="section-body">In today's market, selling a product is not enough. What drives long-term, sustainable growth is <em>fandom</em> — a community of people who share your values and believe in what you offer. Together, we'll find Japanese products that resonate, and build the sourcing and import strategy that turns first-time buyers into loyal fans.</p>
+    <br/>
+    <p class="section-body" style="font-style:italic; color:var(--accent);">Let's find your story in Japan.</p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <p class="pillar-num">01</p>
+        <p class="pillar-title">Supplier Research</p>
+        <p class="pillar-desc">Identifying and vetting the right Japanese manufacturers for your product category.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">02</p>
+        <p class="pillar-title">First Contact</p>
+        <p class="pillar-desc">Reaching out to suppliers on your behalf via official inquiry forms in natural Japanese.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">03</p>
+        <p class="pillar-title">Trade Negotiation</p>
+        <p class="pillar-desc">Bilingual negotiation to secure fair terms and lasting partnerships.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">04</p>
+        <p class="pillar-title">Market Entry</p>
+        <p class="pillar-desc">Strategic guidance for overseas brands entering the Japanese market.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1058,9 +1224,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">My Waves</span>
-  <span>© 2026 Maiko Tsutsumi. All rights reserved.</span>
-  <span>Japan Sourcing & Market Specialist</span>
+  <img src="logo_illustration.png" alt="" class="footer-illustration">
+  <div class="footer-bottom">
+    <span class="footer-logo">My Waves</span>
+    <span>© 2026 Maiko Tsutsumi. All rights reserved.</span>
+    <span>Japan Supplier Research &amp; First Contact Specialist</span>
+  </div>
 </footer>
 
 <script>
@@ -1077,7 +1246,11 @@
   reveals.forEach(el => observer.observe(el));
 </script>
 
-<!-- Lightbox -->
+<!-- ===================================================================
+     LEGACY LIGHTBOX (Portfolioセクション復活時に有効化してください)
+     上の Portfolio セクションのコメントを外したら、こちらのコメントも外す。
+     =================================================================== -->
+<!--
 <div class="lightbox-overlay" id="lightbox">
   <button class="lightbox-close" id="lightbox-close">&times;</button>
   <img src="" alt="" id="lightbox-img">
@@ -1099,6 +1272,7 @@
     if (e.target === overlay) overlay.classList.remove('active');
   });
 </script>
+-->
 
 </body>
 </html>
