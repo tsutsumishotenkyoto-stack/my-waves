@@ -931,6 +931,34 @@
       .portfolio-gallery { gap: 16px; }
       .portfolio-item { width: calc(50% - 8px); }
     }
+
+    /* ============================================
+       Scroll Fade-In + Card Hover Animations
+       ============================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
+    .pricing-card {
+      transition: box-shadow 0.3s ease;
+    }
+    .pricing-card:hover {
+      box-shadow: 0 0 0 2px #c9a84c, 0 8px 24px rgba(201,168,76,0.2);
+    }
   </style>
 </head>
 <body>
@@ -990,7 +1018,7 @@
   <h2>What I've Delivered</h2>
   <p class="cw-intro">Real projects. Real results. All delivered via Fiverr.</p>
   <div class="cw-grid">
-    <div class="cw-card reveal">
+    <div class="cw-card case-card reveal">
       <img src="case-01.png" alt="AI Tool Market Outreach" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -998,7 +1026,7 @@
         <p class="cw-result"><strong>Result:</strong> 11,251 companies researched, 4,517 emails successfully delivered</p>
       </div>
     </div>
-    <div class="cw-card reveal">
+    <div class="cw-card case-card reveal">
       <img src="case-02.png" alt="Bridal Fabric Supplier Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Kosovo × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -1006,7 +1034,7 @@
         <p class="cw-result"><strong>Result:</strong> Export-ready suppliers identified across Kyoto, Fukui &amp; Gunma regions</p>
       </div>
     </div>
-    <div class="cw-card reveal">
+    <div class="cw-card case-card reveal">
       <img src="case-03.png" alt="Trading Card Game Procurement Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">USA × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -1014,7 +1042,7 @@
         <p class="cw-result"><strong>Result:</strong> 4 major TCG titles analyzed for 10,000–15,000+ boxes/month import strategy</p>
       </div>
     </div>
-    <div class="cw-card reveal">
+    <div class="cw-card case-card reveal">
       <img src="case-04.png" alt="Used Game Console Supplier Research" class="cw-img">
       <div class="cw-body">
         <div class="cw-meta">Canada × Japan &nbsp;·&nbsp; Delivered via Fiverr</div>
@@ -1234,6 +1262,23 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  // Generic fade-in for sections, cards, and headings/paragraphs
+  {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section, .case-card, .pricing-card, h2, p').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  }
 </script>
 
 <!-- Lightbox -->
