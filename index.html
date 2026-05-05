@@ -852,11 +852,7 @@
       .services-hero-img { border-radius: 8px; }
     }
 
-    /* ===========================================================
-       LEGACY: Portfolio Gallery + Lightbox (currently disabled)
-       HTML はコメントアウトされていますが、復活させる場合は
-       下の <!-- LEGACY PORTFOLIO ... --> ブロックを解除してください。
-       =========================================================== */
+    /* Portfolio Gallery + Lightbox */
     #portfolio {
       padding: 80px 40px;
       max-width: 1100px;
@@ -1029,12 +1025,7 @@
   </div>
 </section>
 
-<!-- ===================================================================
-     LEGACY PORTFOLIO (currently hidden — kept for future restoration)
-     復活させる場合は、下の <section id="portfolio">…</section> を囲っている
-     コメントを外してください。CSSは <style> 内に残してあります。
-     =================================================================== -->
-<!--
+<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="section-label">Portfolio</div>
   <h2>Work Samples</h2>
@@ -1062,7 +1053,6 @@
     </div>
   </div>
 </section>
--->
 
 <!-- PRICING -->
 <section id="pricing">
@@ -1127,7 +1117,7 @@
   <div class="services-custom reveal">
     <p class="services-custom-title">Need something else?</p>
     <p class="services-custom-text">Trade show research, market entry consulting, and negotiation support are available as custom projects.</p>
-    <a href="mailto:tsutsumi.shoten.kyoto@gmail.com" class="services-custom-btn">Get in Touch →</a>
+    <a href="https://mail.google.com/mail/?view=cm&to=tsutsumi.shoten.kyoto@gmail.com" target="_blank" rel="noopener" class="services-custom-btn">Get in Touch →</a>
   </div>
 </section>
 
@@ -1246,11 +1236,7 @@
   reveals.forEach(el => observer.observe(el));
 </script>
 
-<!-- ===================================================================
-     LEGACY LIGHTBOX (Portfolioセクション復活時に有効化してください)
-     上の Portfolio セクションのコメントを外したら、こちらのコメントも外す。
-     =================================================================== -->
-<!--
+<!-- Lightbox -->
 <div class="lightbox-overlay" id="lightbox">
   <button class="lightbox-close" id="lightbox-close">&times;</button>
   <img src="" alt="" id="lightbox-img">
@@ -1272,7 +1258,6 @@
     if (e.target === overlay) overlay.classList.remove('active');
   });
 </script>
--->
 
 </body>
 </html>
